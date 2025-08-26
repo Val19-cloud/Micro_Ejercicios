@@ -13,4 +13,4 @@ Puedes ver el proyecto completo en Tinkercad:
  [Ver circuito en Tinkercad](https://www.tinkercad.com/things/fhzLDvUXmN4)
 
  Imagen del circuito
- [Ver circuito](ENCENDER_LED.png)
+![Ver circuito](ENCENDER_LED.png)
