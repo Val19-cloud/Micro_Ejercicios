@@ -10,4 +10,7 @@ Este proyecto en Arduino permite controlar la intensidad de un LED usando botone
 ## Circuito en Tinkercad
 
 Puedes ver el proyecto completo en Tinkercad:  
- [Ver circuito en Tinkercad](https://www.tinkercad.com/things/fhzLDvUXmN4) 
+ [Ver circuito en Tinkercad](https://www.tinkercad.com/things/fhzLDvUXmN4)
+
+ Imagen del circuito
+ [Ver circuito en Tinkercad](RETO1/Encender_led.png)
