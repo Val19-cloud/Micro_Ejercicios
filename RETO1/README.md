@@ -15,7 +15,11 @@ Se utiliza una variable para recordar el estado anterior del botón y así evita
 
 ## Circuito en Tinkercad
 
+<<<<<<< HEAD
 Simulación en Tinkercad:  
+=======
+Simulación en Tinkercad  
+>>>>>>> bfeacd1 (Actualizar Readme2)
  [Simulación en Tinkercad](https://www.tinkercad.com/things/fhzLDvUXmN4)
 
  Imagen del circuito
