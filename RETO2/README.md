@@ -14,7 +14,7 @@ Una vez que el botón se libera, los LEDs se apagan en orden inverso, también c
 
 ## Circuito en Tinkercad
 
- [Ver circuito en Tinkercad](https://www.tinkercad.com/things/lsbWHMrUVug-brilliant-curcan/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard)
+ [Circuito en Tinkercad](https://www.tinkercad.com/things/lsbWHMrUVug-brilliant-curcan/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard)
 
   Imagen del circuito
  ![Circuito](8_LEDS.png)
