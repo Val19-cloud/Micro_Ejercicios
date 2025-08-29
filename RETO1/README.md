@@ -15,8 +15,8 @@ Se utiliza una variable para recordar el estado anterior del botón y así evita
 
 ## Circuito en Tinkercad
 
-Puedes ver el proyecto completo en Tinkercad:  
- [Ver circuito en Tinkercad](https://www.tinkercad.com/things/fhzLDvUXmN4)
+Simulación en Tinkercad  
+ [Simulación en Tinkercad](https://www.tinkercad.com/things/fhzLDvUXmN4)
 
  Imagen del circuito
 ![Ver circuito](ENCENDER_LED.png)
