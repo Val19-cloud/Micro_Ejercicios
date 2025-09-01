@@ -20,7 +20,5 @@ Mientras los LEDs alternan, si se presiona el pulsador 2, el bucle se interrumpe
 
 ## Circuito en Tinkercad
 
-[Circuito](https://www.tinkercad.com/things/8g0ociW64PZ-alternarleds/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=vP3ivum-BfGT8EbSWVgSfj_I6ywR5aLdyrd2ky0UdFM)
-
 Imagen del circuito
 ![Circuito](Alternar_Leds.png)
