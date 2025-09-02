@@ -19,4 +19,4 @@ Si acierta toda la secuencia, avanza al siguiente nivel, que será un poco más 
 
 ## Imagen del circuito
 
-![Circuito](MemoriaDeSecuencia.png)
+![Circuito](Semaforo.png)
