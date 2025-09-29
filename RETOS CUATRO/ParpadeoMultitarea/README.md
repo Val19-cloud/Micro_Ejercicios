@@ -17,4 +17,4 @@ El ESP32 ejecuta ambas tareas de manera concurrente, demostrando la capacidad mu
 
 ## Video del circuito
 
-![Circuito](PARPADEO MULTITAREA.mp4)
+[Circuito](https://drive.google.com/file/d/1mHZMzCxu7DJfGRsWKxNLUTlvqcNA2Xw7/view?usp=sharing)
