@@ -1,6 +1,6 @@
 # Escáner de dispositivos I²C con ESP32
 
-Este proyecto implementa un escáner I²C en el ESP32. Es una herramienta muy útil para identificar qué dispositivos I²C están conectados al bus y cuál es su dirección.
+Este código implementa un escáner I²C en el ESP32. Es una herramienta muy útil para identificar qué dispositivos I²C están conectados al bus y cuál es su dirección.
 
 ## ¿Cómo funciona?
 
@@ -21,5 +21,3 @@ Si Wire.endTransmission() devuelve 0, se detectó un dispositivo en esa direcci�
 Si devuelve 4, significa que hubo un error desconocido.
 Al final del barrido, muestra si se encontraron dispositivos o no.
 Espera 2 segundos y repite.
-
-[Circuito](https://drive.google.com/file/d/1_RUbD3XiXEVzQHjv8J_RFinLdI1_FjFR/view?usp=sharing)

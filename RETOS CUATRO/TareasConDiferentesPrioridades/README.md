@@ -1,6 +1,6 @@
 # Multitarea con FreeRTOS en ESP32
 
-Este proyecto muestra cómo usar FreeRTOS en un ESP32 para manejar varias tareas de manera concurrente y con diferentes prioridades.
+Este código muestra cómo usar FreeRTOS en un ESP32 para manejar varias tareas de manera concurrente y con diferentes prioridades.
 
 ## ¿Cómo funciona?
 
@@ -28,4 +28,4 @@ Si las tareas tienen prioridades distintas:
 FreeRTOS le da preferencia primero a las de mayor prioridad.
 En este ejemplo, la tarea del botón responde más rápido porque tiene prioridad más alta que las demás. Las tareas de menor prioridad siguen funcionando, pero “ceden el paso” cuando una tarea más importante necesita ejecutarse.
 
-[Circuito](https://drive.google.com/file/d/1HnexQYSwWuHm3eofcrYXMbs0K7aOI1q-/view?usp=sharing)
+[Circuito](https://youtube.com/shorts/-akyk1doCZ4?si=IgBYwyCTV08TKhLG)

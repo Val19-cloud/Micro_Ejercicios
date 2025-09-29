@@ -9,7 +9,7 @@ void recibirEvento(int howMany) {
 }
 
 void setup() {
-  Wire.begin(8); // Dirección esclavo
+  Wire.begin(8); 
   Wire.onReceive(recibirEvento);
   Serial.begin(115200);
 }
