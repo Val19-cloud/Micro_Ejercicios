@@ -1,4 +1,4 @@
-# Proyecto: Parpadeo de LEDs con FreeRTOS en ESP32
+# Parpadeo de LEDs con FreeRTOS en ESP32
 
 Este proyecto muestra cómo usar FreeRTOS en un ESP32 para ejecutar dos tareas en paralelo que hacen parpadear dos LEDs a diferentes intervalos de tiempo.
 

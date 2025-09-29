@@ -1,8 +1,9 @@
-# Proyecto: Ejemplo de Mutex con FreeRTOS en ESP32
+# Ejemplo de Mutex con FreeRTOS en ESP32
 
 Este proyecto muestra cómo usar un mutex (exclusión mutua) en un ESP32 con FreeRTOS para evitar que dos tareas escriban al mismo tiempo en el puerto serial.
 
 ## ¿Cómo funciona?
+
 Crea dos tareas (tarea1 y tarea2).
 Ambas intentan escribir mensajes en el monitor serial.
 Antes de escribir, cada tarea solicita el mutex:
