@@ -240,6 +240,6 @@ Se utilizó **HiveMQ** como broker MQTT.
 
 **Interfaz HiveMQ:**
 
-![Circuito](InterfazHiveMQ (1).png)  
+![Circuito](InterfazHiveMQ.png)  
 
-![Circuito](InterfazHiveMQ (2).png)
+![Circuito](InterfazHiveMQ1.png)
