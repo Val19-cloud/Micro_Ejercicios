@@ -52,25 +52,26 @@ El sistema permite registrar, validar y eliminar tarjetas RFID, almacenando los 
    - UID inválido → acceso denegado.  
 5. El usuario puede eliminar tarjetas enviando por MQTT
 
-## Descripción del código
+## Descricpción del codigo
 
 ### Librerías y definición
 
-```cpp
-#include <WiFi.h>
-#include <PubSubClient.h>
-#include <Wire.h>
-#include <EEPROM.h>
-#include <SPI.h>
-#include <MFRC522.h>
-#include "RTClib.h"
-#include <WiFiClientSecure.h>
+### Librerías utilizadas
 
-#define SS_PIN 5
-#define RST_PIN 27
-#define BUTTON_PIN 15
+- `#include <WiFi.h>`
+- `#include <PubSubClient.h>`
+- `#include <Wire.h>`
+- `#include <EEPROM.h>`
+- `#include <SPI.h>`
+- `#include <MFRC522.h>`
+- `#include "RTClib.h"`
+- `#include <WiFiClientSecure.h>`
 
-## Obtener hora:
+- Librerías: habilitan WiFi, MQTT, EEPROM, SPI, RFID, RTC y conexión segura TLS.
+- SS_PIN y RST_PIN → pines del lector RFID.
+- BUTTON_PIN → botón que activa el modo registro.
+
+## Obtener la hora:
 
 String getHora() {
   DateTime now = rtc.now();
