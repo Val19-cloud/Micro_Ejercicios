@@ -54,7 +54,7 @@ El sistema permite registrar, validar y eliminar tarjetas RFID, almacenando los 
 
 ## Descricpción del codigo
 
--Librerías y definición 
+### Librerías y definición 
 
 #include <WiFi.h>
 #include <PubSubClient.h>
@@ -69,9 +69,9 @@ El sistema permite registrar, validar y eliminar tarjetas RFID, almacenando los 
 #define RST_PIN 27
 #define BUTTON_PIN 15
 
-Librerías: habilitan WiFi, MQTT, EEPROM, SPI, RFID, RTC y conexión segura TLS.
-SS_PIN y RST_PIN → pines del lector RFID.
-BUTTON_PIN → botón que activa el modo registro.
+--Librerías: habilitan WiFi, MQTT, EEPROM, SPI, RFID, RTC y conexión segura TLS.
+--SS_PIN y RST_PIN → pines del lector RFID.
+--BUTTON_PIN → botón que activa el modo registro.
 
 -Obtener la hora:
 
@@ -84,26 +84,26 @@ String getHora() {
 
 Devuelve la hora actual del RTC DS3231 en formato HH:MM:SS.
 
--Guardar UID en EPROM, verificar UID y eliminar UID:
+### Guardar UID en EPROM, verificar UID y eliminar UID:
 void saveUID(String uid) { ... }
 
-Busca un espacio vacío en EEPROM.
-Guarda el UID de la tarjeta RFID.
-Añade un \0 al final y hace commit para que se guarde
+-Busca un espacio vacío en EEPROM.
+-Guarda el UID de la tarjeta RFID.
+-Añade un \0 al final y hace commit para que se guarde
 
 bool uidExists(String uid) { ... }
 
-Recorre la EEPROM leyendo UIDs almacenados.
-Si encuentra coincidencia, devuelve true.
+-Recorre la EEPROM leyendo UIDs almacenados.
+-Si encuentra coincidencia, devuelve true.
 
 void deleteUID(String uid) { ... }
 
-Busca el UID en EEPROM.
-Si lo encuentra, lo borra.
-Publica en MQTT el mensaje de “Tarjeta eliminada”.
-Si no está, avisa "UID no encontrado".
+-Busca el UID en EEPROM.
+-Si lo encuentra, lo borra.
+-Publica en MQTT el mensaje de “Tarjeta eliminada”.
+-Si no está, avisa "UID no encontrado".
 
-## Interrupciones
+### Interrupciones
 
 -Boton registro:
 
@@ -111,10 +111,10 @@ void IRAM_ATTR registrarISR() {
   registroPendiente = true;
 }
 
-Cuando se presiona el botón, se activa registroPendiente.
-Indica que la próxima tarjeta detectada debe guardarse.
+-Cuando se presiona el botón, se activa registroPendiente.
+-Indica que la próxima tarjeta detectada debe guardarse.
 
--Tareas FreeRTOS:
+### Tareas FreeRTOS:
 
 --Tarea RFID:
 void taskRFID(void *pvParameters) {
@@ -153,14 +153,14 @@ void taskRFID(void *pvParameters) {
   }
 }
 
-Detecta si hay una tarjeta cerca.
-Si está en modo registro, guarda el UID en EEPROM.
-Si no, verifica si existe:
-UID válido - “ACCESO PERMITIDO”.
-UID inválido - “ACCESO DENEGADO”.
-Publica el resultado en MQTT.
+-Detecta si hay una tarjeta cerca.
+-Si está en modo registro, guarda el UID en EEPROM.
+-Si no, verifica si existe:
+-UID válido - “ACCESO PERMITIDO”.
+-UID inválido - “ACCESO DENEGADO”.
+-Publica el resultado en MQTT.
 
---Tarea MQTT:
+### Tarea MQTT:
 
 void taskMQTT(void *pvParameters) {
   for (;;) {
@@ -170,10 +170,10 @@ void taskMQTT(void *pvParameters) {
   }
 }
 
-Mantiene la conexión con el broker.
-Ejecuta client.loop() para procesar mensajes entrantes.
+-Mantiene la conexión con el broker.
+-Ejecuta client.loop() para procesar mensajes entrantes.
 
---Tarea del RTC:
+### Tarea del RTC:
 
 void taskRTC(void *pvParameters) {
   for (;;) {
@@ -183,8 +183,8 @@ void taskRTC(void *pvParameters) {
   }
 }
 
-Obtiene la hora actual con getHora().
-La publica en el tópico "acceso/tiempo" cada 5 segundos.
+-Obtiene la hora actual con getHora().
+-La publica en el tópico "acceso/tiempo" cada 5 segundos.
 
 ## Setup
 
@@ -216,11 +216,11 @@ void setup() {
   xTaskCreatePinnedToCore(taskRTC, "TaskRTC", 4096, NULL, 1, NULL, 1);
 }
 
-Inicializa comunicación serie y EEPROM.
-Se conecta al WiFi y al broker MQTT.
-Inicializa SPI, RFID y RTC.
-Configura el botón con interrupción.
-Lanza las tres tareas principales (RFID, MQTT, RTC).
+-Inicializa comunicación serie y EEPROM.
+-Se conecta al WiFi y al broker MQTT.
+-Inicializa SPI, RFID y RTC.
+-Configura el botón con interrupción.
+-Lanza las tres tareas principales (RFID, MQTT, RTC).
 
 ## Void Loop
 
@@ -260,6 +260,6 @@ SCL               GPIO 22
 
 --HiveMQ
 
-![Circuito](InterfazMQ(1).png)
+![Circuito](InterfazMQ (1).png)
 
 ![Circuito](InterfazMQ(2).png)
