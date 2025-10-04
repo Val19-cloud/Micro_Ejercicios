@@ -114,6 +114,7 @@ void IRAM_ATTR registrarISR() {
 ### Tareas FreeRTOS:
 
 ## Tarea RFID:
+ 
 void taskRFID(void *pvParameters) {
   static bool mostrarRegistro = false;
   for (;;) {
@@ -178,38 +179,12 @@ void taskRTC(void *pvParameters) {
   }
 }
 
--Obtiene la hora actual con getHora().
--La publica en el tópico "acceso/tiempo" cada 5 segundos.
+- Obtiene la hora actual con getHora().
+- La publica en el tópico "acceso/tiempo" cada 5 segundos.
 
 ## Setup
 
-void setup() {
-  Serial.begin(115200);
-  EEPROM.begin(EEPROM_SIZE);
-
-  // Conexión a WiFi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) { ... }
-
-  // Configuración MQTT
-  espClient.setInsecure();
-  client.setServer(mqtt_broker, mqtt_port);
-  client.setCallback(callback);
-
-  // Inicialización de periféricos
-  SPI.begin();
-  rfid.PCD_Init();
-  rtc.begin();
-
-  // Configuración del botón
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), registrarISR, FALLING);
-
-  // Crear tareas
-  xTaskCreatePinnedToCore(taskRFID, "TaskRFID", 4096, NULL, 1, NULL, 0);
-  xTaskCreatePinnedToCore(taskMQTT, "TaskMQTT", 4096, NULL, 1, NULL, 1);
-  xTaskCreatePinnedToCore(taskRTC, "TaskRTC", 4096, NULL, 1, NULL, 1);
-}
+void setup() {...}
 
 - Inicializa comunicación serie y EEPROM, se conecta al WiFi y al broker MQTT, inicializa SPI, RFID y RTC,Configura el botón con interrupción y lanza las tres tareas principales (RFID, MQTT, RTC).
 
@@ -223,34 +198,47 @@ Vacío porque el programa funciona con tareas paralelas en FreeRTOS.
 
 Para la simulación del circuito se emplearon borneras con el fin de representar el módulo RFID. Asimismo, aunque en la imagen de la ESP32 no se distinguen con claridad los pines, las conexiones se realizaron en los pines correspondientes.
 
--Conexiones:
+##  Conexiones
 
---ESP32 a MFRC522 (RFID)
-MFRC522          ESP32
-VCC               3.3V
-GND               GND
-RST               GPIO 27
-SDA               GPIO 5
-MOSI              GPIO 23
-MISO              GPIO 19
-SCK               GPIO 18
+### ESP32 ↔ MFRC522 (RFID)
 
---ESP32 a RTC DS3231
+| MFRC522 | ESP32   |
+|---------|---------|
+| VCC     | 3.3V    |
+| GND     | GND     |
+| RST     | GPIO 27 |
+| SDA     | GPIO 5  |
+| MOSI    | GPIO 23 |
+| MISO    | GPIO 19 |
+| SCK     | GPIO 18 |
 
-RTC DS3231        ESP32
-VCC               3.3V
-GND               GND
-SDA               GPIO 21
-SCL               GPIO 22
+---
 
---Botón de registro
-1 pin   GPIO 15
-2 pin   GND
+### ESP32 ↔ RTC DS3231
 
--Para la conección con MQTT se utilizo HiveMQ
+| RTC DS3231 | ESP32   |
+|------------|---------|
+| VCC        | 3.3V    |
+| GND        | GND     |
+| SDA        | GPIO 21 |
+| SCL        | GPIO 22 |
 
---HiveMQ
+---
 
-![Circuito](InterfazMQ (1).png)
+### Botón de Registro
 
-![Circuito](InterfazMQ (2).png)
+| Botón | ESP32   |
+|-------|---------|
+| Pin 1 | GPIO 15 |
+| Pin 2 | GND     |
+
+---
+
+## Conexión MQTT
+
+Se utilizó **HiveMQ** como broker MQTT.
+
+**Interfaz HiveMQ:**
+
+![InterfazMQ1](InterfazMQ (1).png)  
+![InterfazMQ2](InterfazMQ (2).png)
