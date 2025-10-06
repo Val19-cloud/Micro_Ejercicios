@@ -194,7 +194,7 @@ Vacío porque el programa funciona con tareas paralelas en FreeRTOS.
 
 ![Circuito](Proyecto.png)
 
-Para la simulación del circuito se emplearon borneras con el fin de representar el módulo RFID. Asimismo, aunque en la imagen de la ESP32 no se distinguen con claridad los pines, las conexiones se realizaron en los pines correspondientes.
+Para la simulación del circuito se emplearon borneras con el fin de representar el módulo RFID. Asi mismo, aunque en la imagen de la ESP32 no se distinguen con claridad los pines, las conexiones se realizaron en los pines correspondientes.
 
 ##  Conexiones
 
